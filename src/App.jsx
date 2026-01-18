@@ -99,12 +99,7 @@ export const App = () => {
             Erfarenhetsnivå
             <select
               value={level}
-              onChange={(e) => {
-                setLevel(e.target.value);
-                if (e.target.value !== "") {
-                  setStep(4);
-                }
-              }}
+              onChange={(e) => setLevel(e.target.value)}
             >
               <option value="">Välj</option>
               <option value="Junior">Junior</option>
@@ -112,15 +107,30 @@ export const App = () => {
               <option value="Senior">Senior</option>
             </select>
           </label>
+
+          {/* Submit-knapp */}
+          <button
+            onClick={() => {
+              if (level !== "") {
+                setStep(4); // Visa summary
+              } else {
+                alert("Välj en nivå innan du skickar in!");
+              }
+            }}
+          >
+            Submit
+          </button>
         </div>
       )}
 
+
       {step === 4 && (
         <div>
-          <h2>Tack!</h2>
-          <p>{name}</p>
-          <p>{framework}</p>
-          <p>{level}</p>
+          <h2>Tack för dina svar!</h2>
+          <p>Du svarade:</p>
+          <p>Namn: {name}</p>
+          <p>Framework: {framework}</p>
+          <p>Level: {level}</p>
         </div>
       )}
     </div>
