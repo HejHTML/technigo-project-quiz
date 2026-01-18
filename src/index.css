@@ -1,13 +1,126 @@
-:root {
+/* Global styling */
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f9fafb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Container */
+.container {
+  max-width: 600px;
+  min-width: 350px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Form / Step container */
+form,
+div {
+  display: flex;
+  flex-direction: column;
+  /* alla element under varandra */
+  gap: 1rem;
+  /* mellan varje element */
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Inputs, selects, buttons */
+input,
+select,
+button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Buttons */
+button {
+  margin-top: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* Radiobutton group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  /* varje radiobutton på egen rad */
+  gap: 0.5rem;
+  /* lagom mellan varje alternativ */
+}
+
+.radio-group label {
+  display: flex;
+  /* rad-layout: knapp + text på samma rad */
+  align-items: center;
+  /* vertikal centrering */
+  gap: 0.5rem;
+  /* mellan knapp och text */
+  cursor: pointer;
+  /* hela raden klickbar */
+  font-weight: 400;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: #2563eb;
+  /* blå markering när vald */
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* Fieldset styling (om du använder det) */
+fieldset {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+/* Summary styling */
+.summary {
+  text-align: center;
+}
+
+/* Tablet och uppåt */
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+/* Större skärmar */
+@media (min-width: 1200px) {
+  .container {
+    padding: 3rem;
+  }
 }
