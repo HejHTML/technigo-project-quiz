@@ -4,12 +4,14 @@ import "./index.css";
 export const App = () => {
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
-  const [framework, setFramework] = useState("");
-  const [level, setLevel] = useState("");
+  const [funSprint, setFunSprint] = useState("");
+  const [learnedSprint, setLearnedSprint] = useState("");
 
   return (
     <div className="container">
       <h1>Developer Quiz</h1>
+
+      {/* Steg 1: Namn */}
       {step === 1 && (
         <div>
           <label>
@@ -30,10 +32,9 @@ export const App = () => {
             />
           </label>
 
-          {/* Fortsätt-knapp */}
           <button
             onClick={() => {
-              if (name !== "") {       // validering: måste skriva namn
+              if (name !== "") {
                 setStep(step + 1);
               } else {
                 alert("Skriv ditt namn först!");
@@ -45,76 +46,77 @@ export const App = () => {
         </div>
       )}
 
+      {/* Steg 2: Roligaste sprint (radiobuttons) */}
       {step === 2 && (
         <div className="radio-group">
-          <p>Favorit-ramverk?</p>
+          <p>Vilken sprint på Technigos kurs har varit roligast?</p>
 
           <label>
             <input
               type="radio"
-              name="framework"
-              value="React"
-              checked={framework === "React"}
+              name="funSprint"
+              value="HTML & CSS"
+              checked={funSprint === "HTML & CSS"}
               onChange={(e) => {
-                setFramework(e.target.value);
+                setFunSprint(e.target.value);
+                setStep(step + 1);
+              }}
+            />
+            HTML & CSS
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="funSprint"
+              value="JavaScript"
+              checked={funSprint === "JavaScript"}
+              onChange={(e) => {
+                setFunSprint(e.target.value);
+                setStep(step + 1);
+              }}
+            />
+            JavaScript
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="funSprint"
+              value="React"
+              checked={funSprint === "React"}
+              onChange={(e) => {
+                setFunSprint(e.target.value);
                 setStep(step + 1);
               }}
             />
             React
           </label>
-
-          <label>
-            <input
-              type="radio"
-              name="framework"
-              value="Vue"
-              checked={framework === "Vue"}
-              onChange={(e) => {
-                setFramework(e.target.value);
-                setStep(step + 1);
-              }}
-            />
-            Vue
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="framework"
-              value="Angular"
-              checked={framework === "Angular"}
-              onChange={(e) => {
-                setFramework(e.target.value);
-                setStep(step + 1);
-              }}
-            />
-            Angular
-          </label>
         </div>
       )}
 
+      {/* Steg 3: Lärt mest av (dropdown) */}
       {step === 3 && (
         <div>
           <label>
-            Erfarenhetsnivå
+            Vilken sprint har du lärt dig mest av?
             <select
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}
+              value={learnedSprint}
+              onChange={(e) => setLearnedSprint(e.target.value)}
             >
               <option value="">Välj</option>
-              <option value="Junior">Junior</option>
-              <option value="Mid">Mid</option>
-              <option value="Senior">Senior</option>
+              <option value="HTML & CSS">HTML & CSS</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="React">React</option>
             </select>
           </label>
 
-          {/* Submit-knapp */}
           <button
             onClick={() => {
-              if (level !== "") {
+              if (learnedSprint !== "") {
                 setStep(4); // Visa summary
               } else {
-                alert("Välj en nivå innan du skickar in!");
+                alert("Välj en sprint innan du skickar in!");
               }
             }}
           >
@@ -123,14 +125,14 @@ export const App = () => {
         </div>
       )}
 
-
+      {/* Steg 4: Summary */}
       {step === 4 && (
         <div>
           <h2>Tack för dina svar!</h2>
           <p>Du svarade:</p>
           <p>Namn: {name}</p>
-          <p>Framework: {framework}</p>
-          <p>Level: {level}</p>
+          <p>Roligaste sprint: {funSprint}</p>
+          <p>Jag har lärt mig mest av: {learnedSprint}</p>
         </div>
       )}
     </div>

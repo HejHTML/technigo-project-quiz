@@ -1,24 +1,25 @@
 # Quiz
+Det här projektet är en quiz/survey byggd i React basics. Syftet är att öva på React state och controlled forms genom att skapa en enkel typ av Typeform/Buzzfeed-quiz.
 
-Replace this readme with your own information about the project. You can include things like:
+Användaren får svara på tre frågor:
 
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
-- How to run the project locally
+1. Namn (textinput)
+2. Roligaste sprint på kursen (radiobuttons)
+3. Sprint som lärt dig mest (dropdown)
+
+Efter att användaren har svarat visas en sammanfattning av svaren.
+
+Tekniker jag använt:
+- React för komponentbaserad UI
+- useState för att hantera state
+- Controlled forms för inputs, radiobuttons och dropdown.
+- CSS för responsiv design och (jättelite) styling
+- Vite som utvecklingsserver
+
+Om jag hade mer tid/lade ner mer tid skulle jag fixa snygga övergångar/animationer mellan frågorna så att det blev ett trevligare quiz utseendemässigt.
+
+Kör lokalt: npm i && code . && npm run dev
+http://localhost:5173/
 
 ## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-
-## Getting Started with the Project
-
-### Dependency Installation & Startup Development Server
-
-Once cloned, navigate to the project's root directory and this project uses npm (Node Package Manager) to manage its dependencies.
-
-The command below is a combination of installing dependencies, opening up the project on VS Code and it will run a development server on your terminal.
-
-```bash
-npm i && code . && npm run dev
-```
+https://quizzyquizzz.netlify.app/

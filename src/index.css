@@ -22,9 +22,7 @@ form,
 div {
   display: flex;
   flex-direction: column;
-  /* alla element under varandra */
   gap: 1rem;
-  /* mellan varje element */
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
@@ -59,7 +57,6 @@ select:focus {
 /* Buttons */
 button {
   margin: 1rem auto 0 auto;
-  /* topp 1rem, auto horisontellt */
   background: #4b0c98;
   max-width: 150px;
   color: white;
@@ -68,7 +65,6 @@ button {
   cursor: pointer;
   transition: background 0.2s;
   display: block;
-  /* nödvändigt för auto-margin att fungera */
 }
 
 
@@ -80,31 +76,24 @@ button:hover {
 .radio-group {
   display: flex;
   flex-direction: column;
-  /* varje radiobutton på egen rad */
   gap: 0.5rem;
-  /* lagom mellan varje alternativ */
 }
 
 .radio-group label {
   display: flex;
-  /* rad-layout: knapp + text på samma rad */
   align-items: center;
-  /* vertikal centrering */
   gap: 0.5rem;
-  /* mellan knapp och text */
   cursor: pointer;
-  /* hela raden klickbar */
   font-weight: 400;
 }
 
 .radio-group input[type="radio"] {
   accent-color: #2563eb;
-  /* blå markering när vald */
   width: 1.2rem;
   height: 1.2rem;
 }
 
-/* Fieldset styling (om du använder det) */
+/* Fieldset styling */
 fieldset {
   border: 1px solid #ddd;
   padding: 1rem;
@@ -116,7 +105,7 @@ fieldset {
   text-align: center;
 }
 
-/* Tablet och uppåt */
+/* Tablet och större */
 @media (min-width: 768px) {
   .container {
     padding: 2rem;
