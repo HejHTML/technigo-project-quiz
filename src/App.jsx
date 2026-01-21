@@ -9,7 +9,7 @@ export const App = () => {
 
   return (
     <div className="container">
-      <h1>Developer Quiz</h1>
+      <h1>Technigo Sprintquiz</h1>
 
       {/* Steg 1: Namn */}
       {step === 1 && (

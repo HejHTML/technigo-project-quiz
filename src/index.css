@@ -6,7 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #4a8ac9;
+  background: #092746;
+  color: #030e1f;
+
 }
 
 /* Container */
@@ -15,6 +17,7 @@ body {
   min-width: 350px;
   margin: 2rem auto;
   padding: 1rem;
+  background-color: #5eea8f;
 }
 
 /* Form / Step container */
@@ -23,10 +26,10 @@ div {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: white;
+  background: rgb(172, 246, 177);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: 4px 2px 2px 6px rgba(31, 58, 22, 0.1);
 }
 
 /* Labels */
@@ -50,14 +53,14 @@ button {
 
 input:focus,
 select:focus {
-  border-color: #4b0c98;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Buttons */
 button {
   margin: 1rem auto 0 auto;
-  background: #4b0c98;
+  background: #031d44;
   max-width: 150px;
   color: white;
   border: none;
@@ -105,7 +108,7 @@ fieldset {
   text-align: center;
 }
 
-/* Tablet och större */
+/* Tablet och uppåt */
 @media (min-width: 768px) {
   .container {
     padding: 2rem;
